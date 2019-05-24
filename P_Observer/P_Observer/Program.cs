@@ -10,6 +10,15 @@ namespace P_Observer
     {
         static void Main(string[] args)
         {
+            Newspaper newspaper = new Newspaper();
+            Subscriber John = new Subscriber(newspaper);
+            Subscriber Jo = new Subscriber(newspaper);
+            newspaper.setText("Hello world! :)");
+            newspaper.setText("This is pattern observer!");
+            newspaper.setText("Nice to see you!");
+            newspaper.removeObserver(John);
+            newspaper.setText("Good luck! :)");
+            Console.ReadKey();
         }
     }
 }
