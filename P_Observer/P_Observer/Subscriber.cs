@@ -9,10 +9,12 @@ namespace P_Observer
     class Subscriber : IDisplayElement, IObserver
     {
         private ISubject newspaper;
+        private string name;
         private string text;
 
-        public Subscriber(ISubject newspaper)
+        public Subscriber(ISubject newspaper, string name)
         {
+            this.name = name;
             this.newspaper = newspaper;
             this.newspaper.registerObserver(this);
         }
@@ -25,7 +27,7 @@ namespace P_Observer
 
         public void Display()
         {
-            Console.WriteLine("News: " + text);
+            Console.WriteLine("Name: " + name + "; News: " + text);
         }
     }
 }
